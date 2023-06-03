@@ -1,7 +1,9 @@
 {
   "scripts": {
     "start": "node src/app.js",
-    "socket": "node --watch src/socket.js"
+    "start:dev": "node src/app.js",
+    "socket": "node --watch src/socket.js",
+    "build": "echo 'ok'"
   },
   "dependencies": {
     "cors": "^2.8.5",
