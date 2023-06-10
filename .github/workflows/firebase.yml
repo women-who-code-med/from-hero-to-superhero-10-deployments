@@ -49,6 +49,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
 
+      - name: Pre deploy functions  
+        run: npm i --package-lock-only
+        working-directory: backend
+
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
