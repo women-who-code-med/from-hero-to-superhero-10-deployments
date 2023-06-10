@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function packLocalDependencies() {
+  echo "Packing up local dependencies"
+  rm -rf package-lock.json
+  npm i --package-lock-only
+}
+
+function preDeploy() {
+  packLocalDependencies
+}
+
+preDeploy

@@ -12,11 +12,16 @@
       }
     ]
   },
-  "functions": {
-    "source": "./backend",
-    "ignore": [
-      "node_modules",
-      ".env.example"
-    ]
-  }
+  "functions": [
+    {
+      "source": "./backend",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "codebase": "default"
+    }
+  ]
 }

@@ -2,6 +2,7 @@ const http = require("http");
 const express = require("express");
 const cors = require("cors");
 const { Server } = require("socket.io");
+const sequelize = require("./utils/postgresql");
 const { errorHandler, notFoundHandler } = require("./middlewares/handlers");
 
 const app = express(),
@@ -19,5 +20,11 @@ app.use("/", require("./routes"));
 app.use(notFoundHandler);
 app.use(errorHandler);
 io.on("connection", require("./controllers/ioController"));
+
+Promise.all([
+  sequelize.sync(),
+]).then(() => {
+  console.log("System connected");
+});
 
 module.exports = app;

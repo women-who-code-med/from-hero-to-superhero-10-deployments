@@ -55,15 +55,11 @@ jobs:
           name: front
           path: frontend/dist
 
-      - name: Remove monorepo
-        run: |
-          rm package*.json
-        working-directory: backend
-
       - name: Pre deploy functions  
         run: |
-          npm i --package-lock-only
+          ./preDeploy
         working-directory: backend
+        shell: bash
 
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master

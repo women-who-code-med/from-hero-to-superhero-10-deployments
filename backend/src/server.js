@@ -5,17 +5,6 @@ const sequelize = require("./utils/postgresql");
 
 const PORT = process.env.PORT || 3000;
 
-const start = async () => {
-  try {
-    await sequelize.sync({ force: true });
-
-    server.listen(PORT, () => {
-      console.log(`Server started on port ${PORT}...`);
-    });
-  } catch (error) {
-    console.error(error);
-    process.exit(1);
-  }
-};
-
-start();
+server.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}...`);
+});
