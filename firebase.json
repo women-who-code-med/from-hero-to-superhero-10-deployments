@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "frontend/dist",
+    "public": "./frontend/dist",
     "rewrites": [
       {
         "source": "/api/**",
@@ -13,11 +13,10 @@
     ]
   },
   "functions": {
-    "source": "backend",
+    "source": "./backend",
     "ignore": [
       "node_modules",
       ".env.example"
-    ],
-    "runtime": "nodejs18"
+    ]
   }
 }
