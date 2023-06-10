@@ -1,23 +1,16 @@
 {
+  "name": "@wwcomed/lesson10",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
-    "start": "node src/app.js",
-    "start:dev": "node src/app.js",
-    "socket": "node --watch src/socket.js",
-    "build": "echo 'ok'"
+    "frontend": "npm run dev -w @wwcomed/frontend",
+    "backend": "npm run dev -w @wwcomed/backend"
   },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "pg": "^8.11.0",
-    "pg-hstore": "^2.3.4",
-    "sequelize": "^6.31.1",
-    "socket.io": "^4.6.1"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.17",
-    "@types/node": "^20.2.5",
-    "jest": "^29.5.0"
-  }
+  "author": "",
+  "license": "ISC"
 }
