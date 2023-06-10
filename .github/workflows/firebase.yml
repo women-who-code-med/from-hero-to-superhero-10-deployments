@@ -1,4 +1,6 @@
 name: Build and Deploy Firebase Application
+# See more https://github.com/marketplace/actions/github-action-for-firebase
+
 on:
   workflow_dispatch:
 
@@ -42,3 +44,4 @@ jobs:
           args: deploy
         env:
           GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PROJECT_ID: wwcomed-super-hero

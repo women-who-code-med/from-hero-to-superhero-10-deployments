@@ -15,16 +15,8 @@
   "functions": {
     "source": "backend",
     "ignore": [
-      "**node_modules**",
-      "postDeploy",
-      "preDeploy",
-      "*.test.ts",
-      "tsconfig.json",
-      "*.ts",
-      "*.md",
-      "*.log",
-      "*.tsbuildinfo",
-      "*.bak"
+      "node_modules",
+      ".env.example"
     ],
     "runtime": "nodejs18"
   }
