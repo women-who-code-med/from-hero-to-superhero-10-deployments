@@ -49,15 +49,21 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
 
-      - name: Pre deploy functions  
-        run: npm i --package-lock-only
-        working-directory: backend
-
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
           name: front
           path: frontend/dist
+
+      - name: Remove monorepo
+        run: |
+          rm package*.json
+        working-directory: backend
+
+      - name: Pre deploy functions  
+        run: |
+          npm i --package-lock-only
+        working-directory: backend
 
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master

@@ -1,6 +1,7 @@
 {
   "name": "@wwcomed/backend",
   "main": "src/functions.js",
+  "private": true,
   "scripts": {
     "start": "node src/functions.js",
     "dev": "node --watch src/server.js",
