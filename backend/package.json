@@ -6,7 +6,6 @@
     "start": "node src/functions.js",
     "dev": "node --watch src/server.js",
     "socket": "node --watch src/socket.js",
-    "lock": "npm i --package-lock-only",
     "build": "echo 'ok'"
   },
   "dependencies": {

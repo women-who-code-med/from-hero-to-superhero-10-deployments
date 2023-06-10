@@ -56,10 +56,8 @@ jobs:
           path: frontend/dist
 
       - name: Pre deploy functions  
-        run: |
-          ./preDeploy
+        run: npm i --workspaces=false --lock-only
         working-directory: backend
-        shell: bash
 
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master

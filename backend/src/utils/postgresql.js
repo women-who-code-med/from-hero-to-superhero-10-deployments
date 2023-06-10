@@ -1,3 +1,7 @@
 const { Sequelize } = require("sequelize");
 
-module.exports = new Sequelize(process.env.POSTGRESQL_CONNECTION);
+const sequelize = new Sequelize(process.env.POSTGRESQL_CONNECTION || "postgres://user:pass@example.com:5432/dbname", {
+    dialect: "postgres"
+});
+
+module.exports = sequelize;
