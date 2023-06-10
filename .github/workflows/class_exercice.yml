@@ -1,0 +1,37 @@
+name: Mi primer Workflow  
+
+on: 
+  workflow_dispatch:
+  
+  push:
+    branches:
+      - main
+      - feature/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      
+      - name: Install & Build
+        run: |
+          npm  ci --silent
+          npm run build -w frontend
+        working-directory: .
+      
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          # Artifact name
+          name: build
+          path: |
+            build
+            *.js
+            !node_modules
