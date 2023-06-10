@@ -12,5 +12,8 @@
     "backend": "npm run dev -w @wwcomed/backend"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^4.3.9"
+  }
 }
